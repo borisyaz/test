@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --job-name=run1
+#SBATCH --output=run1.out
+#SBATCH --error=run1.err
+#SBATCH -n 16
+#SBATCH --exclusive
+#SBATCH --partition=par-gpu-2
+#SBATCH -N 1
+work=/home/bojin9
+cd $work
+## export GAUSS_SCRDIR="/gss_gpfs_scratch/sharma.mana"
+## g09 test.com
+hostname > qq
+date >> qq
+module load stata-13
+module list >> qq 2>&1
+which stata >> qq
